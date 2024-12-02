@@ -4,7 +4,7 @@ import {GameRunner} from '../src/game-runner';
 import { Game } from '../src/game';
 
 const originalConsoleLog = console.log;
-const logs:any[] = []
+let logs:any[] = []
 let inTest = false
 
 // Override console.log
@@ -22,6 +22,8 @@ describe('The test environment', () => {
 
     afterEach(()=>{
         inTest = false
+        logs = []
+        
         console.log = originalConsoleLog
     })
 
