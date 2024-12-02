@@ -51,6 +51,18 @@ describe('The test environment', () => {
         const expected = ["Question was incorrectly answered","Player was sent to the penalty box"]
         expect(logs).to.deep.equal(expected);
     });
+
+    it("should indicate correct answer", function () {
+        const game = new Game();
+        game.add("Player")
+
+        inTest = true
+        game.wasCorrectlyAnswered()
+        const expected = [""]
+        expect(logs).to.deep.equal(expected);
+    });
+
+    
 });
 
 
