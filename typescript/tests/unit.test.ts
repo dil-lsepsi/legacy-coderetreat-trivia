@@ -59,7 +59,17 @@ describe('The test environment', () => {
 
     });
 
-    it("should be correct", function () {
+    it("should indicate correct answer", function () {
+        const game = new Game();
+        game.add("Player")
+
+        inTest = true
+        game.wasCorrectlyAnswered()
+        const expected = ["Answer was correct!","Player now has NaN Gold Coins."]
+        expect(logs).to.deep.equal(expected);
+    });
+
+    it("should indicate correct answer from penalty", function () {
         const stateMock = new GameState();
         const game = new Game(stateMock);
         const player = "p1";

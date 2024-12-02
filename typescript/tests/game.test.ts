@@ -52,15 +52,6 @@ describe('The test environment', () => {
         expect(logs).to.deep.equal(expected);
     });
 
-    it("should indicate correct answer", function () {
-        const game = new Game();
-        game.add("Player")
-
-        inTest = true
-        game.wasCorrectlyAnswered()
-        const expected = ["Answer was correct!","Player now has NaN Gold Coins."]
-        expect(logs).to.deep.equal(expected);
-    });
     it("should roll", function () {
         const game = new Game();
         game.add("Player")
