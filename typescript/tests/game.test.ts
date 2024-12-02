@@ -67,7 +67,8 @@ describe('The test environment', () => {
 
         inTest = true
         game.roll(2)
-        const expected = ["Answer was corrent!!!!","Player now has NaN Gold Coins."]
+        const expected = ["Player is the current player", "They have rolled a 2",
+            "Player's new location is NaN","The category is Rock","Rock Question 0"]
         expect(logs).to.deep.equal(expected);
     });
 
