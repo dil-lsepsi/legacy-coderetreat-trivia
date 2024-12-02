@@ -15,10 +15,10 @@ export class GameState {
 
 }
 
-const transaltions = {
+const translations = {
     en: {
         popQuestion: "Pop Question",
-        scineceQuestion: "Science Question",
+        scienceQuestion: "Science Question",
         sportsQuestion: "Sports Question",
         rockQuestion: "Rock Question",
         wasAdded: "was added",
@@ -29,18 +29,71 @@ const transaltions = {
         sNewLocationIs: "'s new location is",
         theCategoryIs: "The category is",
         isNotGettingOutOfPenaltyBox: "is not getting out of the penalty box",
-        questionWasIncorrectlyAnswered: 'Question was incorrectly answered',
+        questionWasIncorrectlyAnswered: "Question was incorrectly answered",
         wasSentToPenaltyBox: "was sent to the penalty box",
-       answerWasCorrect: 'Answer was correct!',
-       nowHas: "now has",
-      goldCoins: "Gold Coins",
-
-
+        answerWasCorrect: "Answer was correct!",
+        nowHas: "now has",
+        goldCoins: "Gold Coins",
     },
-    de: {},
-    hu: {},
-    zh: {}
-}
+    de: {
+        popQuestion: "Pop-Frage",
+        scienceQuestion: "Wissenschaftsfrage",
+        sportsQuestion: "Sportfrage",
+        rockQuestion: "Rock-Frage",
+        wasAdded: "wurde hinzugefügt",
+        theyPlayerAreNumber: "Sie sind Spieler Nummer",
+        isTheCurrentPlayer: "ist der aktuelle Spieler",
+        isGettingOutOfPenaltyBox: "kommt aus der Strafbox",
+        theyHaveRolledA: "Sie haben eine gewürfelt",
+        sNewLocationIs: "'s neuer Standort ist",
+        theCategoryIs: "Die Kategorie ist",
+        isNotGettingOutOfPenaltyBox: "kommt nicht aus der Strafbox",
+        questionWasIncorrectlyAnswered: "Die Frage wurde falsch beantwortet",
+        wasSentToPenaltyBox: "wurde in die Strafbox geschickt",
+        answerWasCorrect: "Antwort war korrekt!",
+        nowHas: "hat jetzt",
+        goldCoins: "Goldmünzen",
+    },
+    hu: {
+        popQuestion: "Pop kérdés",
+        scienceQuestion: "Tudományos kérdés",
+        sportsQuestion: "Sportkérdés",
+        rockQuestion: "Rock kérdés",
+        wasAdded: "hozzá lett adva",
+        theyPlayerAreNumber: "Ők a(z)",
+        isTheCurrentPlayer: "a jelenlegi játékos",
+        isGettingOutOfPenaltyBox: "kijön a büntetődobozból",
+        theyHaveRolledA: "Gurítottak egy",
+        sNewLocationIs: "' új helyszíne",
+        theCategoryIs: "A kategória:",
+        isNotGettingOutOfPenaltyBox: "nem jön ki a büntetődobozból",
+        questionWasIncorrectlyAnswered: "A kérdésre rossz választ adtak",
+        wasSentToPenaltyBox: "büntetődobozba küldték",
+        answerWasCorrect: "A válasz helyes volt!",
+        nowHas: "most már van neki",
+        goldCoins: "aranypénzek",
+    },
+    zh: {
+        popQuestion: "流行问题",
+        scienceQuestion: "科学问题",
+        sportsQuestion: "体育问题",
+        rockQuestion: "摇滚问题",
+        wasAdded: "已添加",
+        theyPlayerAreNumber: "他们是第",
+        isTheCurrentPlayer: "是当前玩家",
+        isGettingOutOfPenaltyBox: "正在离开惩罚区",
+        theyHaveRolledA: "他们掷了一个",
+        sNewLocationIs: "的新位置是",
+        theCategoryIs: "类别是",
+        isNotGettingOutOfPenaltyBox: "未离开惩罚区",
+        questionWasIncorrectlyAnswered: "问题回答错误",
+        wasSentToPenaltyBox: "被送到惩罚区",
+        answerWasCorrect: "回答正确！",
+        nowHas: "现在有",
+        goldCoins: "金币",
+    },
+};
+
 
 export class Game {
     private state: GameState;
@@ -53,10 +106,10 @@ export class Game {
         else {
             this.state = new GameState();
         }
-        this.state.l = transaltions[this.state.language]
+        this.state.l = translations[this.state.language]
         for (let i = 0; i < 50; i++) {
             this.state.popQuestions.push(this.state.l.popQuestion + " " + i);
-            this.state.scienceQuestions.push(this.state.l.scineceQuestion + " " + i);
+            this.state.scienceQuestions.push(this.state.l.scienceQuestion + " " + i);
             this.state.sportsQuestions.push(this.state.l.sportsQuestion + " " + i);
             this.state.rockQuestions.push(this.state.l.rockQuestion + " " + i);
         }
