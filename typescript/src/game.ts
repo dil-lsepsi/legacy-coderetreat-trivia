@@ -15,7 +15,7 @@ export class GameState{
 export class Game {
     private state:GameState;    
 
-    constructor(state:GameState) {
+    constructor(state?:GameState) {
         if(state){
             this.state = state
         }
