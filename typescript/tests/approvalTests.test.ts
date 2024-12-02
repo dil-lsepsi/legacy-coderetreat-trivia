@@ -7,7 +7,6 @@ let logs: any[] = []
 let inTest = false
 
 describe("When running some tests", function () {
-  return
   beforeEach(() => {
     console.log = (arg: any[]) => {
       if (inTest) {
