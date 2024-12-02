@@ -1,1 +1,4 @@
-["Player was added","They are player number 1"]
+[
+  "Player was added",
+  "They are player number 1"
+]
