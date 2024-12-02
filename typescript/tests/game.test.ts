@@ -72,6 +72,18 @@ describe('The test environment', () => {
         expect(logs).to.deep.equal(expected);
     });
 
+    it("should roll from penalty", function () {
+        const game = new Game();
+        game.add("Player")
+        game.wrongAnswer()
+        inTest = true
+        
+        game.roll(2)
+        const expected = ["Player is the current player", "They have rolled a 2",
+            "Player is not getting out of the penalty box"]
+        expect(logs).to.deep.equal(expected);
+    });
+
     
 });
 
