@@ -177,6 +177,7 @@ export class Game {
     }
 
     private currentCategory(): string {
+        
         if (this.state.places[this.state.currentPlayer] == 0)
             return 'Pop';
         if (this.state.places[this.state.currentPlayer] == 4)
