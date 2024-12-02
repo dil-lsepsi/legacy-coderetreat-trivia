@@ -11,12 +11,12 @@ let inTest = false
 
 describe('The test environment', () => {
     beforeEach(()=>{
-        console.log = (...args: any[]) => {
+        console.log = (arg: any[]) => {
             if(inTest){
-                logs.push(args)
+                logs.push(arg)
             }
             
-            originalConsoleLog("Overridden Log:", ...args);
+            originalConsoleLog("Overridden Log:", arg);
         };
     })
 
