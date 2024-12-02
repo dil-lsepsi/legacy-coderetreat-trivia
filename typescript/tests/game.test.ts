@@ -61,6 +61,15 @@ describe('The test environment', () => {
         const expected = ["Answer was corrent!!!!","Player now has NaN Gold Coins."]
         expect(logs).to.deep.equal(expected);
     });
+    it("should roll", function () {
+        const game = new Game();
+        game.add("Player")
+
+        inTest = true
+        game.roll(2)
+        const expected = ["Answer was corrent!!!!","Player now has NaN Gold Coins."]
+        expect(logs).to.deep.equal(expected);
+    });
 
     
 });
