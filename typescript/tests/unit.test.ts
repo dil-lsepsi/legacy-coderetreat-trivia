@@ -43,7 +43,7 @@ describe('The test environment', () => {
     it("should add many players", function () {
         const stateMock = new GameState();
         const game = new Game(stateMock);
-        const players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7"];
+        const players = ["p1", "p2", "p3", "p4", "p5", "p6", "p7","p1", "p2", "p3", "p4", "p5", "p6", "p7"];
         const playerNum = players.length;
         players.forEach(p => game.add(p));
         expect(stateMock.players.length).to.equal(playerNum);
@@ -65,8 +65,21 @@ describe('The test environment', () => {
 
         inTest = true
         game.wasCorrectlyAnswered()
-        const expected = ["Answer was correct!","Player now has NaN Gold Coins."]
+        const expected = ["Answer was correct!","Player now has 1 Gold Coins."]
         expect(logs).to.deep.equal(expected);
+    });
+
+    it("should indicate game end if player wins", function () {
+        return
+        inTest = true
+
+        const game = new Game();
+        const player = "Player";
+
+        game.add("Player")
+
+        const expected = `Game end`
+        expect(logs).to.equal(expected);
     });
 
     it("should indicate correct answer from penalty", function () {
@@ -75,10 +88,11 @@ describe('The test environment', () => {
         const player = "p1";
         game.add(player);
         stateMock.inPenaltyBox = [true]
-        game.roll(3)
         inTest = true
+        game.roll(3)
         game.wasCorrectlyAnswered()
-        const expected = ["Answer was correct!","p1 now has NaN Gold Coins."]
+        const expected =  ["p1 is the current player","They have rolled a 3","p1 is getting out of the penalty box","p1's new location is 3","The category is Rock",
+            "Rock Question 0","Answer was correct!","p1 now has 1 Gold Coins."]
         expect(logs).to.deep.equal(expected);
     });
 

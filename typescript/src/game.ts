@@ -37,8 +37,8 @@ export class Game {
 
     public add(name: string): boolean {
         this.state.players.push(name);
-        this.state.places[this.howManyPlayers()] = 0;
-        this.state.purses[this.howManyPlayers()] = 0;
+        this.state.places[this.howManyPlayers()-1] = 0;
+        this.state.purses[this.howManyPlayers()-1] = 0;
         this.state.inPenaltyBox[this.howManyPlayers()] = false;
 
         console.log(name + " was added");
