@@ -40,6 +40,15 @@ describe('The test environment', () => {
         const expected = ["Player was added","They are player number 1"]
         expect(logs).to.deep.equal(expected);
     });
+    it("should indicate wrong answer", function () {
+        const game = new Game();
+        game.add("Player")
+
+        inTest = true
+        game.wrongAnswer()
+        const expected = ["Question was incorrectly answered","Player was sent to the penalty box"]
+        expect(logs).to.deep.equal(expected);
+    });
 });
 
 
